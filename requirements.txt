@@ -1,4 +1,8 @@
+faiss-cpu
 streamlit
+clip
 torch
-faiss
-json
+Pillow
+requests
+pandas
+numpy
