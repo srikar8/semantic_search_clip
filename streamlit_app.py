@@ -18,8 +18,9 @@ import numpy as np
 import requests
 from io import BytesIO
 
-import json
 import pandas as pd
+
+
 # Load the JSON file
 with open('coco_dataset/annotations/captions_train2017.json', 'r') as file:
     data = json.load(file)
@@ -121,8 +122,6 @@ def display_results(results, annotat_df, top_n=5):
         
         if count >= top_n:
             break
-
-
 
 # Title of the application
 st.title("CLIP-Based Text and Image Search")
