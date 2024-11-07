@@ -49,13 +49,13 @@ device = "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 # Load FAISS indexes and metadata
-text_index = faiss.read_index("clip_db_6/text/vectors.index")
-image_index = faiss.read_index("clip_db_6/images/vectors.index")
+text_index = faiss.read_index("https://drive.google.com/file/d/1-joAEJ8KDNW4uzY5j7slj7cXfMLZU0b0/view?usp=share_link")
+image_index = faiss.read_index("https://drive.google.com/file/d/1N3NSSA9xfJNqJb_2d3CQUt0KrFZJMEBv/view?usp=share_link")
 
-with open("clip_db_6/images/metadata.json", "r") as f:
+with open("https://drive.google.com/file/d/1VbYbzDYpRG-5YkRSinMzLgOYIFPgkNhE/view?usp=share_link", "r") as f:
     image_metadata = json.load(f)
 
-with open("clip_db_6/text/metadata.json", "r") as f:
+with open("https://drive.google.com/file/d/1rjdHlJSZcM5_EecD_PU9-LlFSflc6QpN/view?usp=share_link", "r") as f:
     text_metadata = json.load(f)
 
 def normalize_vectors(vectors):
@@ -117,7 +117,7 @@ def display_results(results, annotat_df, top_n=5):
         score = result["score"]
         
         if is_valid_image_url(image_path):
-            st.image(image_path, caption=f"{captions} (Cosine Similarity: {score:.4f})", use_column_width=True)
+            st.image(image_path, caption=f"{captions} (Similarity: {score:.4f})", use_column_width=True)
             count += 1
         
         if count >= top_n:
