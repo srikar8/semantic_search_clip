@@ -49,14 +49,16 @@ device = "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 # Load FAISS indexes and metadata
-text_index = faiss.read_index("https://drive.google.com/file/d/1-joAEJ8KDNW4uzY5j7slj7cXfMLZU0b0/view?usp=share_link")
-image_index = faiss.read_index("https://drive.google.com/file/d/1N3NSSA9xfJNqJb_2d3CQUt0KrFZJMEBv/view?usp=share_link")
+#text_index = faiss.read_index("clip_db_6/text/vectors.index")
+image_index = faiss.read_index("clip_db_6/images/vectors.index")
+text_index=image_index
 
-with open("https://drive.google.com/file/d/1VbYbzDYpRG-5YkRSinMzLgOYIFPgkNhE/view?usp=share_link", "r") as f:
+with open("clip_db_6/images/metadata.json", "r") as f:
     image_metadata = json.load(f)
 
-with open("https://drive.google.com/file/d/1rjdHlJSZcM5_EecD_PU9-LlFSflc6QpN/view?usp=share_link", "r") as f:
-    text_metadata = json.load(f)
+#with open("clip_db_6/text/metadata.json", "r") as f:
+#    text_metadata = json.load(f)
+text_metadata = image_metadata
 
 def normalize_vectors(vectors):
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
