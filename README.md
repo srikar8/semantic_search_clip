@@ -21,7 +21,7 @@ A powerful semantic image search engine built using CLIP (Contrastive Language-I
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/srikar8/semantic_search_clip
 cd semantic-image-search
 ```
 
