@@ -1,6 +1,6 @@
-# Semantic Image Search Engine
+# Semantic Image Search
 
-A powerful semantic image search engine built using CLIP (Contrastive Language-Image Pre-training) and FAISS for efficient similarity search. This application allows users to search through a large collection of images using either text descriptions or similar images.
+A powerful semantic image search built using CLIP (Contrastive Language-Image Pre-training) and FAISS for efficient similarity search. This application allows users to search through a large collection of images using either text descriptions or similar images.
 
 ## Features
 
